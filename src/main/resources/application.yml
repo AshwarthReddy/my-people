@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      database: my-pople
+      host: localhost
+      username:
+      password:
