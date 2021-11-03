@@ -1,9 +1,10 @@
 package in.people.repo;
 
-import org.springframework.data.repository.reactive.ReactiveSortingRepository;
+import in.people.entity.People;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PeopleRepository extends ReactiveSortingRepository<PeopleRepository, String> {
+public interface PeopleRepository extends ReactiveMongoRepository<People, String> {
 
 }
