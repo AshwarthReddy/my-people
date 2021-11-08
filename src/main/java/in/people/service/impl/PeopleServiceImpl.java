@@ -1,10 +1,9 @@
 package in.people.service.impl;
 
-import in.people.dto.PeopleDto;
+import in.people.entity.People;
 import in.people.repo.PeopleRepository;
 import in.people.service.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
@@ -15,12 +14,7 @@ public class PeopleServiceImpl implements PeopleService {
     PeopleRepository peopleRepository;
 
     @Override
-    public Flux<PeopleDto> getAllPeople(Integer pageNum, Integer pageSize) {
-
-        Pageable.ofSize(pageSize);
-
-        peopleRepository.findAll();
-
-        return null;
+    public Flux<People> getAllPeople() {
+        return peopleRepository.findAll();
     }
 }
