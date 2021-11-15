@@ -2,9 +2,9 @@ FROM openjdk:16-alpine as builder
 WORKDIR source
 #RUN chmod +x gradlew
 #RUN ./gradlew build
-COPY . .
-RUN chmod +x gradlew
-RUN ./gradlew build
+#COPY . .
+#RUN chmod +x gradlew
+#RUN ./gradlew build
 ARG JAR_FILE=/build/libs/my-people-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
