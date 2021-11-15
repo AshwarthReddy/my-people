@@ -3,10 +3,9 @@ package in.people.controller;
 import in.people.entity.People;
 import in.people.service.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/people")
@@ -20,7 +19,20 @@ public class PeopleController {
     @GetMapping
     public Flux<People> getAllPeople(){
         return  peopleService.getAllPeople();
+    }
 
+    @PostMapping
+    public Mono<People> savePeople(@RequestBody People people){
+        return peopleService.savePeople(people);
+    }
+
+    @GetMapping("{/id}")
+    public Mono<People> findPeopleById(String id){
+        return peopleService.findPeopleBYId(id);
+    }
+    @GetMapping("{/id}")
+    public Mono<String> deleteByPeople(String id){
+        return peopleService.deleteById(id);
     }
 
 }
