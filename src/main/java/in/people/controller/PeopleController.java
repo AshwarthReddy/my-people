@@ -30,7 +30,7 @@ public class PeopleController {
     public Mono<People> findPeopleById(String id){
         return peopleService.findPeopleBYId(id);
     }
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     public Mono<String> deleteByPeople(String id){
         return peopleService.deleteById(id);
     }
