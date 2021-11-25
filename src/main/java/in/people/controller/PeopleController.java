@@ -26,7 +26,7 @@ public class PeopleController {
         return peopleService.savePeople(people);
     }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public Mono<People> findPeopleById(String id){
         return peopleService.findPeopleBYId(id);
     }
