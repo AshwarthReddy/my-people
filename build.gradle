@@ -38,5 +38,6 @@ sonarqube {
     properties {
         property 'sonar.host.url', 'http://localhost:9000'
         property 'sonar.login', '0a1a751cffd7ab50594d0ec0a6df3779866bd3c7'
+        property "sonar.projectKey", "in.people:my-people"
     }
 }
