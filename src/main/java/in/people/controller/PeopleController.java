@@ -26,12 +26,12 @@ public class PeopleController {
         return peopleService.savePeople(people);
     }
 
-    @GetMapping("{/id}")
-    public Mono<People> findPeopleById(String id){
+    @GetMapping("/{id}")
+    public Mono<People> findPeopleById(@PathVariable String id){
         return peopleService.findPeopleBYId(id);
     }
-    @GetMapping("{/id}")
-    public Mono<String> deleteByPeople(String id){
+    @DeleteMapping("/{id}")
+    public Mono<String> deleteByPeople(@PathVariable String id){
         return peopleService.deleteById(id);
     }
 
