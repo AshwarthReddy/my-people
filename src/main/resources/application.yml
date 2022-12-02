@@ -3,3 +3,8 @@ spring:
     mongodb:
       database: my-pople
       host: localhost
+  mvc:
+    pathmatch:
+      matching-strategy: "ant_path_matcher"
+server:
+  port: 9090
